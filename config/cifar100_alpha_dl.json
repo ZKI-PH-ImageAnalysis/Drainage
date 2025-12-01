@@ -1,0 +1,33 @@
+{
+    "model": {
+        "name": "resnet34"
+    },
+    "loss": {
+        "name": "alpha_dl",
+        "alpha": 0.1,
+        "delta": 1e-4,
+        "drainage_idx": 100,
+        "pass_model_to_loss": true
+    },
+    "dataset": {
+        "name": "cifar100",
+        "num_classes": 100,
+        "train_batchsize": 128,
+        "test_batchsize": 256,
+        "num_workers": 4
+    },
+    "optim": {
+        "total_epoch": 200,
+        
+        "optimizer": "sgd",
+        "learning_rate": 0.01,
+        "momentum": 0.9,
+        "weight_decay": 0,
+
+        "grad_bound": 5.0,
+        
+        "scheduler": "cosine",
+        "T_max": 200,
+        "eta_min": 0
+    }
+}

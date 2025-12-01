@@ -1,0 +1,37 @@
+{
+    "model": {
+        "name": "resnet50"
+    },
+    "loss": {
+        "name": "nce_agce",
+        "alpha": 50.0,
+        "beta": 0.1,
+        "a": 2.5,
+        "q": 3.0
+    },
+ "dataset": {
+        "name": "clothing1m",
+        "data_path":"Clothing1M/",
+        "num_classes": 14,
+        "num_classes_model": 15,
+        "train_batchsize": 32,
+        "test_batchsize": 1024,
+        "num_workers": 8
+      
+    },
+    "optim": {
+        "total_epoch": 15,
+        
+        "optimizer": "sgd",
+        "learning_rate": 0.001,
+        "momentum": 0.9,
+        "weight_decay": 1e-3,
+        "nesterov": false,
+        
+        "grad_bound": 5.0,
+        
+        "scheduler": "steplr",
+        "step_size": 10,
+        "gamma": 0.1
+    }
+}

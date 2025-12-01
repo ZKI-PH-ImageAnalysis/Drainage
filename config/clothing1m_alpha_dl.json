@@ -1,0 +1,38 @@
+{
+    "model": {
+        "name": "resnet50"
+    },
+    "loss": {
+        "name": "alpha_dl",
+        "alpha": 0.01, 
+        "delta":0,
+        "drainage_idx": 14,
+
+        "pass_model_to_loss": true
+    },
+    "dataset": {
+        "name": "clothing1m",
+        "data_path":"Clothing1M/",
+        "num_classes": 14,
+        "num_classes_model": 15,
+        "train_batchsize": 32,
+        "test_batchsize": 1024,
+        "num_workers": 8
+      
+    },
+    "optim": {
+        "total_epoch": 15,
+        
+        "optimizer": "sgd",
+        "learning_rate": 0.0001,
+        "momentum": 0.9,
+        "weight_decay": 1e-3,
+        "nesterov": false,
+        
+        "grad_bound": 5.0,
+        
+        "scheduler": "steplr",
+        "step_size": 10,
+        "gamma": 0.1
+    }
+}
