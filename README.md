@@ -5,7 +5,7 @@ Modern deep learning struggles with noisy labels, class ambiguity, and reliably 
 <p align="center">
   <img src="abstract.svg" alt="Alt text" width="800"/>
   <br>
-  <em>Figure 1: Different sources of class uncertainty, and the way they are handled by a classical classification model (e.g.\ softmax / cross-entropy) and by our proposed drainage model. Our drainage-based approach is more robust to mislabelings, and allows ambiguous and outlier instances to be predicted as `drainage' rather than classified arbitrarily..</em>
+  <em>Figure 1: Different sources of class uncertainty, and the way they are handled by a classical classification model (e.g.\ softmax / cross-entropy) and by our proposed drainage model. Our drainage-based approach is more robust to mislabelings, and allows ambiguous and outlier instances to be predicted as `drainage' rather than classified arbitrarily.</em>
 </p>
 
 
