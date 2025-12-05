@@ -58,7 +58,19 @@ python main.py \
 --noise_rate 0.45 \
 --eval_freq 10
 ```
-
+## Reference
+If you find this work helpful, please consider citing our paper:
+```
+@misc{taha2025drainageunifyingframeworkaddressing,
+      title={Drainage: A Unifying Framework for Addressing Class Uncertainty}, 
+      author={Yasser Taha and Grégoire Montavon and Nils Körber},
+      year={2025},
+      eprint={2512.03182},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2512.03182}, 
+}
+```
 ## Thanks
 
-Moreover, parts of this repository is code from [Ye et al.](https://github.com/Virusdoll/Active-Negative-Loss), [Ma et al.](https://github.com/HanxunH/Active-Passive-Losses) and [Zhou et al.](https://github.com/hitcszx/ALFs).
+Moreover, parts of this repository is taken from [Ye et al.](https://github.com/Virusdoll/Active-Negative-Loss), [Ma et al.](https://github.com/HanxunH/Active-Passive-Losses) and [Zhou et al.](https://github.com/hitcszx/ALFs).
