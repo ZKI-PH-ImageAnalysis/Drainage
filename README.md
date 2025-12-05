@@ -8,6 +8,13 @@ Modern deep learning struggles with noisy labels, class ambiguity, and reliably 
   <em>Figure 1: Different sources of class uncertainty, and the way they are handled by a classical classification model (e.g.\ softmax / cross-entropy) and by our proposed drainage model. Our drainage-based approach is more robust to mislabelings, and allows ambiguous and outlier instances to be predicted as `drainage' rather than classified arbitrarily.</em>
 </p>
 
+The drainage loss is presented:
+
+$$
+\ell(p,t) = \log\Big(1 + \alpha\Big(\frac{p_d}{p_t} + \frac{p_\mathcal{J}}{p_t}\Big) + \beta \frac{p_\mathcal{J}}{p_d}\Big)
+$$
+
+Here $$p_t$$ and $$p_d$$ denote the probability mass assigned by the model to the target class and the drainage node, respectively, while $$p_\mathcal{J}$$ represents the probabilities of all off-target classes. The hyperparameters $$\alpha,\beta > 0$$ control the openness of the drainage.
 
 ## Scope
 We view our contribution as a general, practical advancement with potential impact across multiple areas of machine learning. For clarity and focus, this project presents the method primarily through the lens of robust loss design. This codebase provides tools for evaluating robust loss functions across a range of datasets. It includes clean datasets such as MNIST, CIFAR-10, CIFAR-100, and ILSVRC12, as well as datasets with real-world label noise, including CIFAR10-N (40.2%), CIFAR100-N(40.2%), WebVision (20%), and Clothing1M (38.5%). It also supports adding synthetic noise to MNIST, CIFAR-10, and CIFAR-100. Among the synthetic options, asymmetric noise and instance-dependent noise most closely resemble real-world label corruption, and can be used to systematically distort labels in these datasets.
