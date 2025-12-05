@@ -1,6 +1,6 @@
 # Drainage
 ## Overview
-Modern deep learning struggles with noisy labels, class ambiguity, and reliably rejecting out-of-distribution or corrupted samples. We introduce a [unified framework](https://arxiv.org/abs/2512.03182v1) that adds a “drainage node” to the network output. Through a dedicated "drainage loss", the model reallocates probability mass toward uncertainty while preserving end-to-end training and differentiability. This provides a natural outlet for highly ambiguous, anomalous, or noisy samples, especially under instance-dependent and asymmetric label noise. A depiction of the Draiange is shown in Figure 1 contrasting it to classical methods.
+Modern deep learning struggles with noisy labels, class ambiguity, and reliably rejecting out-of-distribution or corrupted samples. We introduce a [unified framework](https://arxiv.org/abs/2512.03182v1) that adds a “drainage node” to the network output. Through a dedicated "drainage loss", the model reallocates probability mass toward uncertainty while preserving end-to-end training and differentiability. This provides a natural outlet for highly ambiguous, anomalous, or noisy samples, especially under instance-dependent and asymmetric label noise. A depiction of the Drainage is shown in Figure 1 contrasting it to classical methods in case of mislabeled or ambiguously labeled samples.
 
 <p align="center">
   <img src="abstract.svg" alt="Alt text" width="800"/>
