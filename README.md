@@ -8,7 +8,7 @@ Modern deep learning struggles with noisy labels, class ambiguity, and reliably 
   <em>Figure 1: Different sources of class uncertainty, and the way they are handled by a classical classification model (e.g.\ softmax / cross-entropy) and by our proposed drainage model. Our drainage-based approach is more robust to mislabelings, and allows ambiguous and outlier instances to be predicted as `drainage' rather than classified arbitrarily.</em>
 </p>
 
-The drainage loss is presented:
+The drainage loss is presented as:
 
 $$
 \ell(p,t) = \log\Big(1 + \alpha\Big(\frac{p_d}{p_t} + \frac{p_\mathcal{J}}{p_t}\Big) + \beta \frac{p_\mathcal{J}}{p_d}\Big)
