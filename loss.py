@@ -331,7 +331,7 @@ class ANL_CE_ER(torch.nn.Module):
         entropy = math.log(self.num_classes) + (prob_class * prob_class.log()).sum()
         return entropy
 
-class AlphaDrainageLoss(torch.nn.Module):
+class DrainageLoss(torch.nn.Module):
     def __init__(self, alpha=1.0 ,beta = 1.0, drainage_idx=-1, delta:float=0,reduction="mean"):
         super().__init__()
         self.alpha = alpha
@@ -500,7 +500,7 @@ def alpha_dl(config):
     if beta is None:
         beta = 1 / config['alpha']
 
-    return AlphaDrainageLoss(
+    return DrainageLoss(
         config['alpha'],
         beta,
         config['drainage_idx'],
