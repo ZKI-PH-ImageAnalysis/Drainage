@@ -332,9 +332,10 @@ class ANL_CE_ER(torch.nn.Module):
         return entropy
 
 class AlphaDrainageLoss(torch.nn.Module):
-    def __init__(self, alpha=1.0 ,drainage_idx=-1, delta:float=0,reduction="mean"):
+    def __init__(self, alpha=1.0 ,beta = 1.0, drainage_idx=-1, delta:float=0,reduction="mean"):
         super().__init__()
         self.alpha = alpha
+        self.beta = beta
         self.drainage_idx = drainage_idx
         #softmax before exponentiation
         self.reduction = reduction
@@ -377,7 +378,7 @@ class AlphaDrainageLoss(torch.nn.Module):
         # get logsumexp terms
         term_0 = torch.zeros_like(logits_targets)  # corresponds to 0
         term_1 = logsumexp_d_J - logits_targets + torch.log(torch.tensor(self.alpha, device=device, dtype=dtype))
-        term_2 = logsumexp_J - logits_drainage - torch.log(torch.tensor(self.alpha, device=device, dtype=dtype))
+        term_2 = logsumexp_J - logits_drainage + torch.log(torch.tensor(self.beta, device=device, dtype=dtype))
 
         # stack terms and apply logsumexp
         diff = torch.stack([term_0, term_1, term_2], dim=1)
@@ -494,5 +495,15 @@ def anl_ce_er(num_classes, config):
                      config['delta'], config['lamb'], config['min_prob'])
     
 def alpha_dl(config):
-    return AlphaDrainageLoss(config.get('alpha'), config.get('drainage_idx'), config.get('delta'),
-                             config.get('reduction', 'mean'))
+    #if beta is none, use 1/alpha
+    beta = config.get('beta')
+    if beta is None:
+        beta = 1 / config['alpha']
+
+    return AlphaDrainageLoss(
+        config['alpha'],
+        beta,
+        config['drainage_idx'],
+        config['delta'],
+        config.get('reduction', 'mean')
+    )
