@@ -4,7 +4,7 @@
 * **[May 2026]** 🎥 We have released a [video description](https://www.youtube.com/watch?v=U8jF3Og9gwc) walking through the Drainage framework!
 * **[Feb 2026]** 🎉 Drainage has been accepted as a **Highlight** paper at CVPR 2026!
 ## Overview
-Modern deep learning struggles with noisy labels, class ambiguity, and reliably rejecting out-of-distribution or corrupted samples. We introduce a [unified framework](https://arxiv.org/abs/2512.03182v1) that adds a “drainage node” to the network output. Through a dedicated "drainage loss", the model reallocates probability mass toward uncertainty while preserving end-to-end training and differentiability. This provides a natural outlet for highly ambiguous, anomalous, or noisy samples, especially under instance-dependent and asymmetric label noise. A depiction of the Drainage is shown in Figure 1 contrasting it to classical methods in case of mislabeled or ambiguously labeled samples.
+Modern deep learning struggles with noisy labels, class ambiguity, and reliably rejecting out-of-distribution or corrupted samples. We introduce a [unified framework](https://openaccess.thecvf.com/content/CVPR2026/papers/Taha_Drainage_A_Unifying_Framework_for_Addressing_Class_Uncertainty_CVPR_2026_paper.pdf) that adds a “drainage node” to the network output. Through a dedicated "drainage loss", the model reallocates probability mass toward uncertainty while preserving end-to-end training and differentiability. This provides a natural outlet for highly ambiguous, anomalous, or noisy samples, especially under instance-dependent and asymmetric label noise. A depiction of the Drainage is shown in Figure 1 contrasting it to classical methods in case of mislabeled or ambiguously labeled samples.
 
 <p align="center">
   <img src="abstract.svg" alt="Alt text" width="800"/>
@@ -65,14 +65,13 @@ python main.py \
 ## Reference
 If you find this work helpful, please consider citing our paper:
 ```
-@misc{taha2025drainageunifyingframeworkaddressing,
-      title={Drainage: A Unifying Framework for Addressing Class Uncertainty}, 
-      author={Yasser Taha and Grégoire Montavon and Nils Körber},
-      year={2025},
-      eprint={2512.03182},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2512.03182}, 
+@InProceedings{Taha_2026_CVPR,
+    author    = {Taha, Yasser and Montavon, Gr\'egoire and K\"orber, Nils},
+    title     = {Drainage: A Unifying Framework for Addressing Class Uncertainty},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2026},
+    pages     = {41934-41943}
 }
 ```
 ## Thanks
