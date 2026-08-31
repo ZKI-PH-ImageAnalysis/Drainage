@@ -1,8 +1,11 @@
 # Drainage (CVPR 2026: 🌟 Highlight)
+Here is our paper: [Drainage: A Unifying Framework for Addressing Class Uncertainty](https://openaccess.thecvf.com/content/CVPR2026/papers/Taha_Drainage_A_Unifying_Framework_for_Addressing_Class_Uncertainty_CVPR_2026_paper.pdf)
 
 ## 📢 News
 * **[May 2026]** 🎥 We have released a [video description](https://www.youtube.com/watch?v=U8jF3Og9gwc) walking through the Drainage framework!
 * **[Feb 2026]** 🎉 Drainage has been accepted as a **Highlight** paper at CVPR 2026!
+
+
 ## Overview
 Modern deep learning struggles with noisy labels, class ambiguity, and reliably rejecting out-of-distribution or corrupted samples. We introduce a [unified framework](https://openaccess.thecvf.com/content/CVPR2026/papers/Taha_Drainage_A_Unifying_Framework_for_Addressing_Class_Uncertainty_CVPR_2026_paper.pdf) that adds a “drainage node” to the network output. Through a dedicated "drainage loss", the model reallocates probability mass toward uncertainty while preserving end-to-end training and differentiability. This provides a natural outlet for highly ambiguous, anomalous, or noisy samples, especially under instance-dependent and asymmetric label noise. A depiction of the Drainage is shown in Figure 1 contrasting it to classical methods in case of mislabeled or ambiguously labeled samples.
 
